@@ -154,6 +154,8 @@
     .btn.o:hover { background: rgba(10, 25, 41, 0.05); box-shadow: 0 8px 20px rgba(10, 25, 41, 0.1); }
     .btn.light { background: transparent; border: 1px solid rgba(255,255,255,0.7); color: #fff; }
     .btn.light:hover { background: rgba(255,255,255,0.15); }
+    .btn.green { background: #1faa59; }
+    .btn.green:hover { background: #17954c; box-shadow: 0 8px 20px rgba(31, 170, 89, 0.35); }
 
     /* LOADING ANIMATION */
     .preloader {
@@ -270,11 +272,15 @@
     body.menu-open { overflow: hidden; }
 
     /* PAGE BANNER */
+        /* ===== SUB HERO (Navy Blue) ===== */
     .sub {
-      background: linear-gradient(120deg, #d6c9b8, #a89882);
-      color: #fff; padding: 150px 0 80px;
+      background: radial-gradient(circle at 80% 20%, rgba(184, 148, 62, 0.15), transparent 50%),
+                  linear-gradient(120deg, var(--navy), var(--navy-light));
+      color: #fff; padding: 150px 0 70px;
       position: relative; overflow: hidden;
     }
+    .sub h1 { font-size: clamp(40px, 7vw, 72px); color: #fff; }
+    .sub p { max-width: 520px; color: #c9c0b4; margin-top: 10px; }
     .sub:before {
       content: "";
       position: absolute; inset: 0;
@@ -468,6 +474,119 @@
       font-weight: 500;
     }
 
+    /* ===== WHATSAPP CONTACT FORM ===== */
+    .about-form-section {
+      background: var(--white);
+    }
+    .about-form-section .head { justify-content: center; text-align: center; margin-bottom: 30px; }
+    .form-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 40px 36px;
+    }
+    .form-card > p {
+      font-size: 14px;
+      color: var(--mut);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-row {
+      display: flex; flex-direction: column;
+    }
+    .form-row.full { grid-column: 1 / -1; }
+    .form-row label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 8px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .form-row label .req {
+      color: var(--gold);
+      margin-left: 2px;
+    }
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      font: inherit;
+      font-size: 14px;
+      padding: 13px 14px;
+      border: 1px solid var(--card-border);
+      background: var(--white);
+      color: var(--ink);
+      font-family: 'Poppins', sans-serif;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      appearance: none;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+    .form-row select {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23b8943e' d='M6 8L0 0h12z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      background-size: 10px;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    .form-row textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(184, 148, 62, 0.1);
+    }
+    .form-row input.bad,
+    .form-row select.bad,
+    .form-row textarea.bad {
+      border-color: #e74c3c !important;
+      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+    }
+
+    .form-actions {
+      grid-column: 1 / -1;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .form-actions button { font-family: 'Poppins', sans-serif; }
+
+    /* TOAST */
+    .toast {
+      position: fixed;
+      left: 50%; bottom: 90px;
+      transform: translateX(-50%);
+      background: var(--navy); color: #fff;
+      padding: 14px 24px;
+      font-size: 13px; font-weight: 500;
+      z-index: 70;
+      animation: toastIn 0.4s;
+      box-shadow: 0 10px 30px rgba(10, 25, 41, 0.25);
+      max-width: 90vw;
+      text-align: center;
+    }
+    .toast.error { background: #c0392b; }
+    .toast.success { background: #1faa59; }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translate(-50%, 20px); }
+    }
+
     /* CTA */
     .cta-banner {
       background: linear-gradient(120deg, var(--navy), var(--navy-light));
@@ -588,6 +707,9 @@
       .logo-img { height: 32px; }
       .logo-img-footer { height: 56px; }
       .bg { display: none; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-actions { flex-direction: column; }
+      .form-actions .btn { width: 100%; text-align: center; }
     }
     @media (max-width: 520px) {
       .values-grid { grid-template-columns: 1fr; }
@@ -598,6 +720,7 @@
       .stat { border-bottom: 1px solid var(--card-border) !important; }
       .stat:last-child { border-bottom: 0 !important; }
       .cta-banner .btn + .btn { margin: 10px 0 0; display: inline-block; }
+      .form-card { padding: 30px 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
@@ -791,13 +914,11 @@
         <div class="team-card">
           <small>Managing Director</small>
           <h3>Mahamd Rafiq</h3>
-          <p>Leads overall strategy, client relationships and end-to-end project delivery. Reachable directly for calls and project enquiries.</p>
           <a href="tel:+919742089547">+91 97420 89547</a>
         </div>
         <div class="team-card">
           <small>Executive Director</small>
           <h3>Mashaq Patel</h3>
-          <p>Oversees design development, factory coordination and international clients. Available primarily on WhatsApp.</p>
           <a href="https://wa.me/971569465357" target="_blank" rel="noopener">+971 56 946 5357</a>
         </div>
       </div>
@@ -817,33 +938,105 @@
       </div>
       <div class="stats-grid">
         <div class="stat">
-          <b data-count="0" data-suffix="+">00+</b>
+          <b data-count="0" data-suffix="+">250+</b>
           <span>Completed Projects</span>
         </div>
         <div class="stat">
-          <b data-count="0" data-suffix="+">00+</b>
-          <span>Happy Clients</span>
-        </div>
-        <div class="stat">
-          <b data-count="0" data-suffix="+">0+</b>
+          <b data-count="0" data-suffix="+">10+</b>
           <span>Years of Experience</span>
         </div>
         <div class="stat">
-          <b data-count="0" data-suffix="+">00+</b>
+          <b data-count="0" data-suffix="+">50+</b>
           <span>Professional Team Members</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CTA -->
-  <section class="cta-banner">
+  <!-- ===== WHATSAPP CONTACT FORM (replaces old CTA banner) ===== -->
+  <section class="about-form-section">
     <div class="wrap">
-      <div class="eyebrow">Let's Create Something Extraordinary</div>
-      <h2>Let's Work <span class="script">Together</span></h2>
-      <p>Tell us about your project and we'll get back to you within one business day with the next steps.</p>
-      <a class="btn gold" href="contact.html">Get in Touch</a>
-      <a class="btn light" href="https://wa.me/971569465357" target="_blank" rel="noopener">WhatsApp Us</a>
+      <div class="head">
+        <div>
+          <div class="eyebrow">Send Us a Message</div>
+          <h2>Tell Us About <span class="script">Your Project</span></h2>
+        </div>
+        <p>Fill in the details below and send them straight to our WhatsApp — no obligation, no pressure.</p>
+      </div>
+
+      <div class="form-card">
+        <p>All fields marked <span style="color:var(--gold);">*</span> are required.</p>
+
+        <form class="form-grid" id="inquiryForm" novalidate>
+          <div class="form-row">
+            <label for="cf-name">Full Name <span class="req">*</span></label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="numeric" required>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email">
+          </div>
+
+          <div class="form-row">
+            <label for="cf-service">Service Required <span class="req">*</span></label>
+            <select id="cf-service" name="service" required>
+              <option value="">Select a service</option>
+              <option>Full Home Interiors</option>
+              <option>Modular Kitchen</option>
+              <option>Modular Wardrobe</option>
+              <option>Living Room Interiors</option>
+              <option>Bedroom Interiors</option>
+              <option>False Ceiling</option>
+              <option>Office Interiors</option>
+              <option>Commercial Space</option>
+              <option>Renovation</option>
+              <option>Civil Work</option>
+              <option>Lighting Design</option>
+              <option>Furniture Customization</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-location">Project Location <span class="req">*</span></label>
+            <input type="text" id="cf-location" name="location" required>
+          </div>
+
+          <div class="form-row">
+            <label for="cf-budget">Approximate Budget <span class="req">*</span></label>
+            <select id="cf-budget" name="budget" required>
+              <option value="">Select a range</option>
+              <option>Under ₹5 Lakhs</option>
+              <option>₹5 – 10 Lakhs</option>
+              <option>₹10 – 15 Lakhs</option>
+              <option>₹15 – 25 Lakhs</option>
+              <option>₹25 – 40 Lakhs</option>
+              <option>₹40 Lakhs and above</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="form-row full">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn green" id="sendWhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;vertical-align:middle;margin-right:6px;" aria-hidden="true">
+                <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/>
+              </svg>
+              Send on WhatsApp
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -862,9 +1055,6 @@
             </a>
             <a href="https://instagram.com/mashaqinterior" target="_blank" rel="noopener" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-            </a>
-            <a href="https://linkedin.com/company/mashaqinterior" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.3-1.8 2.5V19h-3v-9h2.9v1.3h.1a3.2 3.2 0 012.9-1.6c3 0 3.6 2 3.6 4.6V19z"/></svg>
             </a>
             <a href="https://wa.me/971569465357" target="_blank" rel="noopener" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/></svg>
@@ -945,14 +1135,17 @@
       });
     })();
 
-    /* STICKY NAVBAR + SCROLL ANIMATIONS + WHATSAPP + COUNTERS */
+    /* STICKY NAVBAR + SCROLL ANIMATIONS + WHATSAPP + COUNTERS + FORM */
     (function() {
       var $ = function(s, r) { return (r || document).querySelector(s); },
           $$ = function(s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
 
+      var WA_NUMBER = '971569465357';
+
+      /* Floating WhatsApp */
       var wa = $('.wa');
       if (wa) {
-        wa.href = 'https://wa.me/971569465357?text=' + encodeURIComponent('Hi Mashaq Interior, I would like to know more about your studio.');
+        wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Hi Mashaq Interior, I would like to know more about your studio.');
         wa.target = '_blank';
         wa.rel = 'noopener';
         wa.addEventListener('click', function() {
@@ -962,6 +1155,7 @@
         });
       }
 
+      /* Scroll progress + back to top */
       var pb = document.createElement('div'); pb.id = 'pb'; document.body.appendChild(pb);
       var tt = document.createElement('button'); tt.id = 'tt'; tt.textContent = '↑';
       tt.setAttribute('aria-label', 'Back to top');
@@ -983,6 +1177,7 @@
         }
       }, { passive: true });
 
+      /* Reveal animations */
       var io = new IntersectionObserver(function(es) {
         es.forEach(function(e) {
           if (e.isIntersecting) {
@@ -991,13 +1186,13 @@
           }
         });
       }, { threshold: 0.12 });
-      $$('.intro > *, .vm-card, .value, .why-card, .team-card, .stat, .head').forEach(function(el, i) {
+      $$('.intro > *, .vm-card, .value, .why-card, .team-card, .stat, .head, .form-card').forEach(function(el, i) {
         el.classList.add('rv');
         el.style.transitionDelay = (i % 4) * 90 + 'ms';
         io.observe(el);
       });
 
-      // Count-up stats (only if you fill in real figures)
+      /* Count-up stats */
       $$('.stat b').forEach(function(b) {
         var target = parseInt(b.getAttribute('data-count'), 10) || 0;
         var suffix = b.getAttribute('data-suffix') || '';
@@ -1019,6 +1214,7 @@
         observed.observe(b);
       });
 
+      /* Mobile menu */
       var menuBtn = document.getElementById('menuBtn');
       var mobileNav = document.getElementById('mobileNav');
       function closeMenu() {
@@ -1042,6 +1238,93 @@
         });
         window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
         window.addEventListener('resize', function() { if (innerWidth > 860) closeMenu(); });
+      }
+
+      /* ===== WhatsApp-only contact form ===== */
+      function toast(msg, type) {
+        var t = document.createElement('div');
+        t.className = 'toast' + (type ? ' ' + type : '');
+        t.textContent = msg;
+        document.body.appendChild(t);
+        setTimeout(function() { t.remove(); }, 3200);
+      }
+
+      var form = document.getElementById('inquiryForm');
+      if (form) {
+        var fields = {
+          name: document.getElementById('cf-name'),
+          phone: document.getElementById('cf-phone'),
+          email: document.getElementById('cf-email'),
+          service: document.getElementById('cf-service'),
+          location: document.getElementById('cf-location'),
+          budget: document.getElementById('cf-budget'),
+          message: document.getElementById('cf-message')
+        };
+
+        function markBad(el, isBad) { el.classList.toggle('bad', isBad); }
+
+        function validateForm() {
+          var ok = true;
+          ['name', 'phone', 'service', 'location', 'budget'].forEach(function(k) {
+            var el = fields[k];
+            var bad = !el.value.trim();
+            markBad(el, bad);
+            if (bad) ok = false;
+          });
+          if (fields.phone.value.trim()) {
+            var digits = fields.phone.value.replace(/\D/g, '');
+            var phoneBad = digits.length < 10;
+            markBad(fields.phone, phoneBad);
+            if (phoneBad) ok = false;
+          }
+          if (fields.email.value.trim()) {
+            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim());
+            markBad(fields.email, !emailOk);
+            if (!emailOk) ok = false;
+          }
+          return ok;
+        }
+
+        function buildMessage() {
+          var lines = [
+            'New Inquiry — Mashaq Interior',
+            '',
+            'Name: ' + fields.name.value.trim(),
+            'Phone: ' + fields.phone.value.trim()
+          ];
+          if (fields.email.value.trim()) lines.push('Email: ' + fields.email.value.trim());
+          lines.push('Service Required: ' + fields.service.value);
+          lines.push('Project Location: ' + fields.location.value.trim());
+          lines.push('Approximate Budget: ' + fields.budget.value);
+          if (fields.message.value.trim()) {
+            lines.push('');
+            lines.push('Message:');
+            lines.push(fields.message.value.trim());
+          }
+          return lines.join('\n');
+        }
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          if (!validateForm()) {
+            toast('Please fill in the required fields correctly.', 'error');
+            var bad = form.querySelector('.bad');
+            if (bad) bad.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+          }
+          var msg = buildMessage();
+          window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
+          toast('Opening WhatsApp…', 'success');
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit_whatsapp', { event_category: 'lead', event_label: fields.service.value });
+          }
+        });
+
+        Object.keys(fields).forEach(function(k) {
+          var el = fields[k];
+          el.addEventListener('input', function() { markBad(el, false); });
+          el.addEventListener('change', function() { markBad(el, false); });
+        });
       }
     })();
   </script>

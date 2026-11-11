@@ -272,10 +272,13 @@
 
     /* PAGE BANNER */
     .sub {
-      background: linear-gradient(120deg, #d6c9b8, #a89882);
-      color: #fff; padding: 150px 0 80px;
+      background: radial-gradient(circle at 80% 20%, rgba(184, 148, 62, 0.15), transparent 50%),
+                  linear-gradient(120deg, var(--navy), var(--navy-light));
+      color: #fff; padding: 150px 0 70px;
       position: relative; overflow: hidden;
     }
+    .sub h1 { font-size: clamp(40px, 7vw, 72px); color: #fff; }
+    .sub p { max-width: 520px; color: #c9c0b4; margin-top: 10px; }
     .sub:before {
       content: "";
       position: absolute; inset: 0;
@@ -494,6 +497,50 @@
       * { animation: none !important; transition: none !important; }
       .rv { opacity: 1; transform: none; }
     }
+
+    /* ==========================================
+       NEW: MODAL POPUP STYLES
+    ========================================== */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(10, 25, 41, 0.8);
+      display: none; place-items: center; z-index: 100; padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { display: grid; }
+    .modal-content {
+      background: var(--white); max-width: 600px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 40px;
+      position: relative; border: 1px solid var(--card-border);
+      animation: modalUp 0.3s ease-out;
+    }
+    @keyframes modalUp { from { opacity: 0; transform: translateY(20px); } }
+    .close-modal {
+      position: absolute; top: 15px; right: 15px; background: none;
+      border: none; font-size: 24px; cursor: pointer; color: var(--mut);
+      line-height: 1;
+    }
+    .close-modal:hover { color: var(--gold); }
+    .modal-content h2 { font-size: 32px; color: var(--navy); margin-bottom: 6px; }
+    .modal-content p { font-size: 13px; color: var(--mut); margin-bottom: 24px; }
+    
+    .form-grid-modal { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row-modal { display: flex; flex-direction: column; }
+    .form-row-modal.full { grid-column: 1 / -1; }
+    .form-row-modal label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 6px; }
+    .form-row-modal input, .form-row-modal select, .form-row-modal textarea {
+      width: 100%; font-family: 'Poppins', sans-serif; font-size: 14px; padding: 12px;
+      border: 1px solid var(--card-border); background: var(--off-white); color: var(--ink);
+    }
+    .form-row-modal input:focus, .form-row-modal select:focus, .form-row-modal textarea:focus { outline: none; border-color: var(--gold); }
+    
+    .form-actions-modal { grid-column: 1 / -1; margin-top: 10px; display: flex; }
+    .form-actions-modal .btn { width: 100%; text-align: center; padding: 16px; font-size: 14px; background: #1faa59; }
+    .form-actions-modal .btn:hover { background: #17954c; }
+
+    @media (max-width: 860px) {
+      .form-grid-modal { grid-template-columns: 1fr; }
+      .modal-content { padding: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -563,7 +610,7 @@
           <div class="svc-body">
             <h3>Living Room</h3>
             <p>TV units, wall panelling, false ceilings and curated furniture that balances comfort with sophistication.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Living Room">Enquire Now</button>
           </div>
         </div>
 
@@ -574,7 +621,7 @@
           <div class="svc-body">
             <h3>Bedroom</h3>
             <p>Bespoke beds, walk-in wardrobes, soft lighting and smart storage — bedrooms that feel truly yours.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Bedroom">Enquire Now</button>
           </div>
         </div>
 
@@ -585,7 +632,7 @@
           <div class="svc-body">
             <h3>Kitchen</h3>
             <p>Modular and semi-modular kitchens with premium hardware, efficient layouts and durable finishes.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Modular Kitchen">Enquire Now</button>
           </div>
         </div>
 
@@ -596,7 +643,7 @@
           <div class="svc-body">
             <h3>Dining Room</h3>
             <p>Warm, inviting dining spaces with custom tables, lighting, crockery units and feature walls.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Dining Room">Enquire Now</button>
           </div>
         </div>
 
@@ -607,7 +654,7 @@
           <div class="svc-body">
             <h3>Bathroom</h3>
             <p>Premium tile layouts, vanity design, waterproofing and fittings that combine beauty with function.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Bathroom">Enquire Now</button>
           </div>
         </div>
       </div>
@@ -634,7 +681,7 @@
           <div class="svc-body">
             <h3>Office Interiors</h3>
             <p>Workstations, cabins, meeting rooms and reception areas designed for focus, flow and brand identity.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Office Interiors">Enquire Now</button>
           </div>
         </div>
 
@@ -645,7 +692,7 @@
           <div class="svc-body">
             <h3>Retail Shops</h3>
             <p>Display systems, lighting and layouts designed to attract footfall and make shopping effortless.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Retail Shops">Enquire Now</button>
           </div>
         </div>
 
@@ -656,7 +703,7 @@
           <div class="svc-body">
             <h3>Restaurants</h3>
             <p>Warm, memorable dining ambiences with seating layouts, lighting and material palettes that match your concept.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Restaurants">Enquire Now</button>
           </div>
         </div>
 
@@ -667,7 +714,7 @@
           <div class="svc-body">
             <h3>Hotels</h3>
             <p>Lobbies, guest rooms and corridors designed to feel premium, comfortable and unmistakably yours.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Hotels">Enquire Now</button>
           </div>
         </div>
       </div>
@@ -694,7 +741,7 @@
           <div class="svc-body">
             <h3>Modular Kitchen</h3>
             <p>Factory-made modular kitchens with premium hardware, soft-close fittings and precise CNC finishing.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Modular Kitchen">Enquire Now</button>
           </div>
         </div>
 
@@ -705,7 +752,7 @@
           <div class="svc-body">
             <h3>False Ceiling</h3>
             <p>Designer gypsum, POP and grid ceilings that hide ductwork, integrate lighting and cleanly define spaces.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="False Ceiling">Enquire Now</button>
           </div>
         </div>
 
@@ -716,7 +763,7 @@
           <div class="svc-body">
             <h3>Lighting Design</h3>
             <p>Layered ambient, task and accent lighting that shapes mood and makes every material look its best.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Lighting Design">Enquire Now</button>
           </div>
         </div>
 
@@ -727,7 +774,7 @@
           <div class="svc-body">
             <h3>Furniture Customization</h3>
             <p>Bespoke furniture designed to your dimensions, materials and style — built by our in-house craftsmen.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Furniture Customization">Enquire Now</button>
           </div>
         </div>
 
@@ -738,7 +785,7 @@
           <div class="svc-body">
             <h3>Space Planning</h3>
             <p>Intelligent layouts that make the most of every square foot — maximizing flow, function and feel.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Space Planning">Enquire Now</button>
           </div>
         </div>
 
@@ -749,7 +796,7 @@
           <div class="svc-body">
             <h3>Wall Decoration</h3>
             <p>Wallpapers, textures, wall art and 3D panelling — finishing touches that make each wall a feature.</p>
-            <a class="btn gold small" href="contact.html">Enquire Now</a>
+            <button class="btn gold small" data-service="Wall Decoration">Enquire Now</button>
           </div>
         </div>
       </div>
@@ -823,9 +870,6 @@
             <a href="https://instagram.com/mashaqinterior" target="_blank" rel="noopener" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
             </a>
-            <a href="https://linkedin.com/company/mashaqinterior" target="_blank" rel="noopener" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.3a1.7 1.7 0 110-3.4 1.7 1.7 0 010 3.4zM19 19h-3v-4.7c0-1.1 0-2.6-1.6-2.6s-1.8 1.3-1.8 2.5V19h-3v-9h2.9v1.3h.1a3.2 3.2 0 012.9-1.6c3 0 3.6 2 3.6 4.6V19z"/></svg>
-            </a>
             <a href="https://wa.me/971569465357" target="_blank" rel="noopener" aria-label="WhatsApp">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/></svg>
             </a>
@@ -872,6 +916,95 @@
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/></svg>
     Chat on WhatsApp
   </a>
+
+  <!-- ========================================== -->
+  <!-- NEW: MODAL CONTACT FORM                    -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="enquiryModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModalBtn">&times;</button>
+      
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Tell Us About <span class="script">Your Project</span></h2>
+      <p>Fill in the details below and we'll reply within one business day.</p>
+
+      <form class="form-grid-modal" id="enquiryForm">
+        <div class="form-row-modal">
+          <label>Full Name *</label>
+          <input type="text" id="modal-name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Phone Number *</label>
+          <input type="tel" id="modal-phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Email Address</label>
+          <input type="email" id="modal-email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row-modal">
+          <label>Service Required *</label>
+          <select id="modal-service" required>
+            <option value="">Select a service</option>
+            <option>Full Home Interiors</option>
+            <option>Modular Kitchen</option>
+            <option>Modular Wardrobe</option>
+            <option>Living Room</option>
+            <option>Bedroom</option>
+            <option>Dining Room</option>
+            <option>Bathroom</option>
+            <option>False Ceiling</option>
+            <option>Office Interiors</option>
+            <option>Retail Shops</option>
+            <option>Restaurants</option>
+            <option>Hotels</option>
+            <option>Lighting Design</option>
+            <option>Furniture Customization</option>
+            <option>Space Planning</option>
+            <option>Wall Decoration</option>
+            <option>Renovation</option>
+            <option>Civil Work</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Project Location *</label>
+          <input type="text" id="modal-location" placeholder="Project Location" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Approximate Budget *</label>
+          <select id="modal-budget" required>
+            <option value="">Select a range</option>
+            <option>Under ₹5 Lakhs</option>
+            <option>₹5 – 10 Lakhs</option>
+            <option>₹10 – 15 Lakhs</option>
+            <option>₹15 – 25 Lakhs</option>
+            <option>₹25 – 40 Lakhs</option>
+            <option>₹40 Lakhs and above</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal full">
+          <label>Message</label>
+          <textarea id="modal-message" rows="3" placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <div class="form-actions-modal">
+          <button type="submit" class="btn green" id="modal-wa-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;" aria-hidden="true">
+              <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/>
+            </svg>
+            Send via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script>
     /* LOADING ANIMATION */
@@ -982,6 +1115,80 @@
         window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
         window.addEventListener('resize', function() { if (innerWidth > 860) closeMenu(); });
       }
+    })();
+
+    /* NEW: MODAL POPUP FORM LOGIC */
+    (function() {
+      var WA_NUMBER = '971569465357';
+      var modal = document.getElementById('enquiryModal');
+      var closeBtn = document.getElementById('closeModalBtn');
+      var serviceDropdown = document.getElementById('modal-service');
+
+      // 1. Open modal and prefill dropdown when "Enquire Now" is clicked
+      document.querySelectorAll('[data-service]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var selectedService = this.getAttribute('data-service');
+          
+          // Set the dropdown value
+          serviceDropdown.value = selectedService;
+          
+          // If exact match fails, try a fallback (partial match)
+          if (serviceDropdown.value === "") {
+            Array.from(serviceDropdown.options).forEach(function(opt) {
+              if (opt.text.toLowerCase().includes(selectedService.toLowerCase())) {
+                serviceDropdown.value = opt.value;
+              }
+            });
+          }
+
+          // Show the modal
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+      });
+
+      // 2. Close modal
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal(); // Close if clicking outside the white box
+      });
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      // 3. Handle WhatsApp Submission ONLY
+      var form = document.getElementById('enquiryForm');
+      
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var name = document.getElementById('modal-name').value;
+        var phone = document.getElementById('modal-phone').value;
+        var email = document.getElementById('modal-email').value;
+        var service = serviceDropdown.value;
+        var location = document.getElementById('modal-location').value;
+        var budget = document.getElementById('modal-budget').value;
+        var message = document.getElementById('modal-message').value;
+
+        if (!name || !phone || !service || !location || !budget) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        // Format the message for WhatsApp
+        var text = 'Hi Mashaq Interior,\n\nName: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\nLocation: ' + location + '\nBudget: ' + budget + '\n\nMessage:\n' + message;
+        
+        // Open WhatsApp
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+        
+        // Close modal after sending
+        closeModal();
+      });
     })();
   </script>
 </body>
