@@ -4,9 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-  <!-- ============================================================
-       SEO OPTIMIZATION
-  ============================================================ -->
+  <!-- SEO OPTIMIZATION -->
   <title>About Mashaq Interior | Hyderabad Interior Design Studio</title>
   <meta name="description" content="Learn about Mashaq Interior — a Hyderabad interior design studio built on craft, transparency and detail. Meet our team, our vision, our mission and the values that guide every project.">
   <meta name="keywords" content="about Mashaq Interior, interior design studio Hyderabad, Mahamd Rafiq, Mashaq Patel, Hyderabad interior designers team, our story">
@@ -38,9 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
 
-  <!-- ============================================================
-       STRUCTURED DATA
-  ============================================================ -->
+  <!-- STRUCTURED DATA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -72,10 +68,7 @@
   }
   </script>
 
-  <!-- ============================================================
-       GOOGLE ANALYTICS (GA4)
-       Replace G-XXXXXXXXXX with your Measurement ID
-  ============================================================ -->
+  <!-- GOOGLE ANALYTICS -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -154,8 +147,10 @@
     .btn.o:hover { background: rgba(10, 25, 41, 0.05); box-shadow: 0 8px 20px rgba(10, 25, 41, 0.1); }
     .btn.light { background: transparent; border: 1px solid rgba(255,255,255,0.7); color: #fff; }
     .btn.light:hover { background: rgba(255,255,255,0.15); }
-    .btn.green { background: #1faa59; }
-    .btn.green:hover { background: #17954c; box-shadow: 0 8px 20px rgba(31, 170, 89, 0.35); }
+    .btn.consult { background: #1faa59; }
+    .btn.consult:hover { background: #17954c; }
+    .btn.quote { background: var(--gold); }
+    .btn.quote:hover { background: var(--gold-dark); }
 
     /* LOADING ANIMATION */
     .preloader {
@@ -234,6 +229,9 @@
     header nav a.on { color: var(--gold); }
     header .btn { background: var(--gold); }
     header.s .btn { background: var(--navy); }
+    header .btn.consult { background: #1faa59; }
+    header .btn.quote { background: var(--gold); }
+    header .header-buttons { display: flex; gap: 10px; align-items: center; }
 
     /* MOBILE MENU */
     .menu-btn {
@@ -269,10 +267,11 @@
       letter-spacing: 0.1em; padding: 14px 20px; text-transform: uppercase;
     }
     .mobile-nav .m-cta:hover { background: var(--gold-dark); color: #fff; }
+    .mobile-nav .m-cta.consult { background: #1faa59; }
+    .mobile-nav .m-cta.consult:hover { background: #17954c; }
     body.menu-open { overflow: hidden; }
 
     /* PAGE BANNER */
-        /* ===== SUB HERO (Navy Blue) ===== */
     .sub {
       background: radial-gradient(circle at 80% 20%, rgba(184, 148, 62, 0.15), transparent 50%),
                   linear-gradient(120deg, var(--navy), var(--navy-light));
@@ -474,120 +473,7 @@
       font-weight: 500;
     }
 
-    /* ===== WHATSAPP CONTACT FORM ===== */
-    .about-form-section {
-      background: var(--white);
-    }
-    .about-form-section .head { justify-content: center; text-align: center; margin-bottom: 30px; }
-    .form-card {
-      max-width: 780px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      padding: 40px 36px;
-    }
-    .form-card > p {
-      font-size: 14px;
-      color: var(--mut);
-      margin-bottom: 28px;
-      text-align: center;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-    .form-row {
-      display: flex; flex-direction: column;
-    }
-    .form-row.full { grid-column: 1 / -1; }
-    .form-row label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 8px;
-      font-family: 'Poppins', sans-serif;
-    }
-    .form-row label .req {
-      color: var(--gold);
-      margin-left: 2px;
-    }
-    .form-row input,
-    .form-row select,
-    .form-row textarea {
-      width: 100%;
-      font: inherit;
-      font-size: 14px;
-      padding: 13px 14px;
-      border: 1px solid var(--card-border);
-      background: var(--white);
-      color: var(--ink);
-      font-family: 'Poppins', sans-serif;
-      transition: border-color 0.3s, box-shadow 0.3s;
-      appearance: none;
-      -webkit-appearance: none;
-      border-radius: 0;
-    }
-    .form-row select {
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23b8943e' d='M6 8L0 0h12z'/%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 14px center;
-      background-size: 10px;
-      padding-right: 36px;
-      cursor: pointer;
-    }
-    .form-row textarea {
-      resize: vertical;
-      min-height: 110px;
-      line-height: 1.6;
-    }
-    .form-row input:focus,
-    .form-row select:focus,
-    .form-row textarea:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(184, 148, 62, 0.1);
-    }
-    .form-row input.bad,
-    .form-row select.bad,
-    .form-row textarea.bad {
-      border-color: #e74c3c !important;
-      box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
-    }
-
-    .form-actions {
-      grid-column: 1 / -1;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .form-actions button { font-family: 'Poppins', sans-serif; }
-
-    /* TOAST */
-    .toast {
-      position: fixed;
-      left: 50%; bottom: 90px;
-      transform: translateX(-50%);
-      background: var(--navy); color: #fff;
-      padding: 14px 24px;
-      font-size: 13px; font-weight: 500;
-      z-index: 70;
-      animation: toastIn 0.4s;
-      box-shadow: 0 10px 30px rgba(10, 25, 41, 0.25);
-      max-width: 90vw;
-      text-align: center;
-    }
-    .toast.error { background: #c0392b; }
-    .toast.success { background: #1faa59; }
-    @keyframes toastIn {
-      from { opacity: 0; transform: translate(-50%, 20px); }
-    }
-
-    /* CTA */
+    /* CTA BANNER */
     .cta-banner {
       background: linear-gradient(120deg, var(--navy), var(--navy-light));
       color: #fff; padding: 90px 0; text-align: center;
@@ -645,18 +531,34 @@
     .socials a:hover { background: var(--gold); border-color: var(--gold); color: #fff; transform: translateY(-2px); }
     .socials svg { width: 16px; height: 16px; }
 
-    /* WHATSAPP BUTTON */
+    /* FLOATING WHATSAPP - CIRCLE */
     .wa {
       position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-      background: #1faa59; color: #fff;
-      border-radius: 30px; padding: 12px 18px;
-      font-size: 13px; z-index: 30;
+      background: #25D366; color: #fff;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 30;
       animation: pulse 2.4s infinite;
-      display: inline-flex; align-items: center; gap: 8px;
-      box-shadow: 0 6px 20px rgba(31, 170, 89, 0.3);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s, background 0.3s;
     }
-    .wa:hover { background: #17954c; }
-    .wa svg { width: 18px; height: 18px; }
+    .wa:hover { background: #128C7E; transform: scale(1.08); }
+    .wa svg { width: 28px; height: 28px; }
+
+    /* FLOATING GET A FREE CONSULTATION - CIRCLE */
+    .consult-float {
+      position: fixed; right: 18px; bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+      background: var(--gold); color: #fff;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 30;
+      box-shadow: 0 6px 20px rgba(184, 148, 62, 0.4);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .consult-float:hover { background: var(--gold-dark); transform: scale(1.08); }
+    .consult-float svg { width: 24px; height: 24px; }
 
     #pb { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--gold); z-index: 50; }
     #tt {
@@ -673,7 +575,7 @@
     .rv.in { opacity: 1; transform: none; }
 
     @keyframes up { from { opacity: 0; transform: translateY(30px); } }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(31, 170, 89, 0.5); } 100% { box-shadow: 0 0 0 16px transparent; } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 100% { box-shadow: 0 0 0 16px transparent; } }
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
@@ -686,7 +588,8 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn { display: none; }
+      header .btn:not(.consult) { display: none; }
+      header .header-buttons .btn.quote { display: none; }
       .intro { grid-template-columns: 1fr; gap: 30px; }
       .intro .ph { height: 340px; }
       .vm-grid { grid-template-columns: 1fr; }
@@ -707,9 +610,6 @@
       .logo-img { height: 32px; }
       .logo-img-footer { height: 56px; }
       .bg { display: none; }
-      .form-grid { grid-template-columns: 1fr; }
-      .form-actions { flex-direction: column; }
-      .form-actions .btn { width: 100%; text-align: center; }
     }
     @media (max-width: 520px) {
       .values-grid { grid-template-columns: 1fr; }
@@ -720,11 +620,55 @@
       .stat { border-bottom: 1px solid var(--card-border) !important; }
       .stat:last-child { border-bottom: 0 !important; }
       .cta-banner .btn + .btn { margin: 10px 0 0; display: inline-block; }
-      .form-card { padding: 30px 22px; }
     }
     @media (prefers-reduced-motion: reduce) {
       * { animation: none !important; transition: none !important; }
       .rv { opacity: 1; transform: none; }
+    }
+
+    /* MODAL STYLES */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(10, 25, 41, 0.8);
+      display: none; place-items: center; z-index: 100; padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+    .modal-overlay.open { display: grid; }
+    .modal-content {
+      background: var(--white); max-width: 600px; width: 100%;
+      max-height: 90vh; overflow-y: auto; padding: 40px;
+      position: relative; border: 1px solid var(--card-border);
+      animation: modalUp 0.3s ease-out;
+    }
+    @keyframes modalUp { from { opacity: 0; transform: translateY(20px); } }
+    .close-modal {
+      position: absolute; top: 15px; right: 15px; background: none;
+      border: none; font-size: 24px; cursor: pointer; color: var(--mut);
+      line-height: 1;
+    }
+    .close-modal:hover { color: var(--gold); }
+    .modal-content h2 { font-size: 32px; color: var(--navy); margin-bottom: 6px; }
+    .modal-content p { font-size: 13px; color: var(--mut); margin-bottom: 24px; }
+    
+    .form-grid-modal { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row-modal { display: flex; flex-direction: column; }
+    .form-row-modal.full { grid-column: 1 / -1; }
+    .form-row-modal label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 6px; }
+    .form-row-modal input, .form-row-modal select, .form-row-modal textarea {
+      width: 100%; font-family: 'Poppins', sans-serif; font-size: 14px; padding: 12px;
+      border: 1px solid var(--card-border); background: var(--off-white); color: var(--ink);
+    }
+    .form-row-modal input:focus, .form-row-modal select:focus, .form-row-modal textarea:focus { outline: none; border-color: var(--gold); }
+    
+    .form-actions-modal { grid-column: 1 / -1; margin-top: 10px; display: flex; }
+    .form-actions-modal .btn { width: 100%; text-align: center; padding: 16px; font-size: 14px; }
+    .form-actions-modal .btn.quote { background: var(--gold); }
+    .form-actions-modal .btn.quote:hover { background: var(--gold-dark); }
+    .form-actions-modal .btn.consult { background: #1faa59; }
+    .form-actions-modal .btn.consult:hover { background: #17954c; }
+
+    @media (max-width: 860px) {
+      .form-grid-modal { grid-template-columns: 1fr; }
+      .modal-content { padding: 24px; }
     }
   </style>
 </head>
@@ -751,7 +695,10 @@
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="btn" href="contact.html">Free Consultation</a>
+      <div class="header-buttons">
+        <a class="btn quote" href="#" data-popup="quote">Get a Quote</a>
+        <a class="btn consult" href="#" data-popup="consult">Get a Free Consultation</a>
+      </div>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">Menu</button>
     </div>
   </header>
@@ -763,7 +710,8 @@
     <a href="about.html" class="on">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="contact.html" class="m-cta">Free Consultation</a>
+    <a href="#" class="m-cta" data-popup="quote">Get a Quote</a>
+    <a href="#" class="m-cta consult" data-popup="consult">Get a Free Consultation</a>
   </div>
 
   <!-- PAGE BANNER -->
@@ -926,8 +874,6 @@
   </section>
 
   <!-- STATISTICS -->
-  <!-- ⚠️ IMPORTANT: Replace the four numbers below with your genuine figures
-       before publishing. Do not use placeholder or inflated numbers on a live site. -->
   <div class="stats-section">
     <div class="wrap">
       <div class="head">
@@ -953,90 +899,14 @@
     </div>
   </div>
 
-  <!-- ===== WHATSAPP CONTACT FORM (replaces old CTA banner) ===== -->
-  <section class="about-form-section">
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
     <div class="wrap">
-      <div class="head">
-        <div>
-          <div class="eyebrow">Send Us a Message</div>
-          <h2>Tell Us About <span class="script">Your Project</span></h2>
-        </div>
-        <p>Fill in the details below and send them straight to our WhatsApp — no obligation, no pressure.</p>
-      </div>
-
-      <div class="form-card">
-        <p>All fields marked <span style="color:var(--gold);">*</span> are required.</p>
-
-        <form class="form-grid" id="inquiryForm" novalidate>
-          <div class="form-row">
-            <label for="cf-name">Full Name <span class="req">*</span></label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="cf-phone">Phone Number <span class="req">*</span></label>
-            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="numeric" required>
-          </div>
-
-          <div class="form-row">
-            <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email">
-          </div>
-
-          <div class="form-row">
-            <label for="cf-service">Service Required <span class="req">*</span></label>
-            <select id="cf-service" name="service" required>
-              <option value="">Select a service</option>
-              <option>Full Home Interiors</option>
-              <option>Modular Kitchen</option>
-              <option>Modular Wardrobe</option>
-              <option>Living Room Interiors</option>
-              <option>Bedroom Interiors</option>
-              <option>False Ceiling</option>
-              <option>Office Interiors</option>
-              <option>Commercial Space</option>
-              <option>Renovation</option>
-              <option>Civil Work</option>
-              <option>Lighting Design</option>
-              <option>Furniture Customization</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="cf-location">Project Location <span class="req">*</span></label>
-            <input type="text" id="cf-location" name="location" required>
-          </div>
-
-          <div class="form-row">
-            <label for="cf-budget">Approximate Budget <span class="req">*</span></label>
-            <select id="cf-budget" name="budget" required>
-              <option value="">Select a range</option>
-              <option>Under ₹5 Lakhs</option>
-              <option>₹5 – 10 Lakhs</option>
-              <option>₹10 – 15 Lakhs</option>
-              <option>₹15 – 25 Lakhs</option>
-              <option>₹25 – 40 Lakhs</option>
-              <option>₹40 Lakhs and above</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-
-          <div class="form-row full">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message"></textarea>
-          </div>
-
-          <div class="form-actions">
-            <button type="submit" class="btn green" id="sendWhatsApp">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;vertical-align:middle;margin-right:6px;" aria-hidden="true">
-                <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/>
-              </svg>
-              Send on WhatsApp
-            </button>
-          </div>
-        </form>
-      </div>
+      <div class="eyebrow">Let's Create Something Extraordinary</div>
+      <h2>Let's Design <span class="script">Your Dream Space</span></h2>
+      <p>Tell us about your project and we'll get back to you within one business day with the next steps.</p>
+      <a class="btn gold" href="#" data-popup="consult">Get a Free Consultation</a>
+      <a class="btn light" href="tel:+919742089547">Call +91 97420 89547</a>
     </div>
   </section>
 
@@ -1097,10 +967,201 @@
     </div>
   </footer>
 
-  <a class="wa" href="#" aria-label="Chat with Mashaq Interior on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/></svg>
-    Chat on WhatsApp
+  <!-- FLOATING WHATSAPP - CIRCLE -->
+  <a class="wa" href="https://wa.me/971569465357?text=Hi%20Mashaq%20Interior%2C%20I%20would%20like%20to%20know%20more%20about%20your%20studio." target="_blank" rel="noopener" aria-label="Chat with Mashaq Interior on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/>
+    </svg>
   </a>
+
+  <!-- FLOATING GET A FREE CONSULTATION - CIRCLE -->
+  <a class="consult-float" href="#" data-popup="consult" aria-label="Get a free consultation">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </a>
+
+  <!-- ========================================== -->
+  <!-- MODAL 1: GET A QUOTE FORM                  -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="quoteModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeQuoteModal">&times;</button>
+      
+      <div class="eyebrow">Request a Quote</div>
+      <h2>Get a <span class="script">Quote</span></h2>
+      <p>Tell us what you need and we'll send you a detailed estimate within 2 business days.</p>
+
+      <form class="form-grid-modal" id="quoteForm">
+        <div class="form-row-modal">
+          <label>Full Name *</label>
+          <input type="text" id="quote-name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Phone Number *</label>
+          <input type="tel" id="quote-phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Email Address</label>
+          <input type="email" id="quote-email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row-modal">
+          <label>Property Type *</label>
+          <select id="quote-property" required>
+            <option value="">Select property type</option>
+            <option>Apartment / Flat</option>
+            <option>Independent House / Villa</option>
+            <option>Office Space</option>
+            <option>Retail Shop</option>
+            <option>Restaurant / Hotel</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Service Required *</label>
+          <select id="quote-service" required>
+            <option value="">Select a service</option>
+            <option>Full Home Interiors</option>
+            <option>Modular Kitchen</option>
+            <option>Modular Wardrobe</option>
+            <option>Living Room</option>
+            <option>Bedroom</option>
+            <option>Dining Room</option>
+            <option>Bathroom</option>
+            <option>False Ceiling</option>
+            <option>Office Interiors</option>
+            <option>Retail Shops</option>
+            <option>Restaurants</option>
+            <option>Hotels</option>
+            <option>Lighting Design</option>
+            <option>Furniture Customization</option>
+            <option>Space Planning</option>
+            <option>Wall Decoration</option>
+            <option>Renovation</option>
+            <option>Civil Work</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Project Location *</label>
+          <input type="text" id="quote-location" placeholder="Area / Locality" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Approximate Budget *</label>
+          <select id="quote-budget" required>
+            <option value="">Select a range</option>
+            <option>Under ₹5 Lakhs</option>
+            <option>₹5 – 10 Lakhs</option>
+            <option>₹10 – 15 Lakhs</option>
+            <option>₹15 – 25 Lakhs</option>
+            <option>₹25 – 40 Lakhs</option>
+            <option>₹40 Lakhs and above</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Area (sq. ft.)</label>
+          <input type="text" id="quote-area" placeholder="e.g. 1200 sq. ft.">
+        </div>
+
+        <div class="form-row-modal full">
+          <label>Additional Details</label>
+          <textarea id="quote-message" rows="3" placeholder="Any specific requirements, preferred materials, timeline, etc."></textarea>
+        </div>
+
+        <div class="form-actions-modal">
+          <button type="submit" class="btn quote" id="quote-submit-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;" aria-hidden="true">
+              <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/>
+            </svg>
+            Send Quote Request via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL 2: GET A FREE CONSULTATION FORM      -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="consultModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeConsultModal">&times;</button>
+      
+      <div class="eyebrow">Book a Call</div>
+      <h2>Get a Free <span class="script">Consultation</span></h2>
+      <p>Book a free 30-minute call with our design team. No obligation, just honest advice.</p>
+
+      <form class="form-grid-modal" id="consultForm">
+        <div class="form-row-modal">
+          <label>Full Name *</label>
+          <input type="text" id="consult-name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Phone Number *</label>
+          <input type="tel" id="consult-phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Email Address</label>
+          <input type="email" id="consult-email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row-modal">
+          <label>Preferred Date *</label>
+          <input type="date" id="consult-date" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Preferred Time *</label>
+          <select id="consult-time" required>
+            <option value="">Select a time slot</option>
+            <option>10:00 AM – 11:00 AM</option>
+            <option>11:00 AM – 12:00 PM</option>
+            <option>12:00 PM – 01:00 PM</option>
+            <option>02:00 PM – 03:00 PM</option>
+            <option>03:00 PM – 04:00 PM</option>
+            <option>04:00 PM – 05:00 PM</option>
+            <option>05:00 PM – 06:00 PM</option>
+            <option>06:00 PM – 07:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>How Should We Connect? *</label>
+          <select id="consult-mode" required>
+            <option value="">Select mode</option>
+            <option>Phone Call</option>
+            <option>WhatsApp Video</option>
+            <option>Google Meet / Zoom</option>
+            <option>In-Person at Studio</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal full">
+          <label>What Would You Like to Discuss?</label>
+          <textarea id="consult-message" rows="3" placeholder="Tell us a little about your project so we can prepare for the call..."></textarea>
+        </div>
+
+        <div class="form-actions-modal">
+          <button type="submit" class="btn consult" id="consult-submit-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;" aria-hidden="true">
+              <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/>
+            </svg>
+            Book Consultation via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <script>
     /* LOADING ANIMATION */
@@ -1131,31 +1192,17 @@
         a.classList.toggle('on', a.getAttribute('href') === (h === 'home' ? 'index.html' : h + '.html'));
       });
       document.querySelectorAll('a[href="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) { e.preventDefault(); });
+        if (!a.hasAttribute('data-popup')) {
+          a.addEventListener('click', function(e) { e.preventDefault(); });
+        }
       });
     })();
 
-    /* STICKY NAVBAR + SCROLL ANIMATIONS + WHATSAPP + COUNTERS + FORM */
+    /* STICKY NAVBAR + SCROLL ANIMATIONS + COUNTERS */
     (function() {
       var $ = function(s, r) { return (r || document).querySelector(s); },
           $$ = function(s, r) { return [].slice.call((r || document).querySelectorAll(s)); };
 
-      var WA_NUMBER = '971569465357';
-
-      /* Floating WhatsApp */
-      var wa = $('.wa');
-      if (wa) {
-        wa.href = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent('Hi Mashaq Interior, I would like to know more about your studio.');
-        wa.target = '_blank';
-        wa.rel = 'noopener';
-        wa.addEventListener('click', function() {
-          if (typeof gtag === 'function') {
-            gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'about_floating' });
-          }
-        });
-      }
-
-      /* Scroll progress + back to top */
       var pb = document.createElement('div'); pb.id = 'pb'; document.body.appendChild(pb);
       var tt = document.createElement('button'); tt.id = 'tt'; tt.textContent = '↑';
       tt.setAttribute('aria-label', 'Back to top');
@@ -1177,7 +1224,6 @@
         }
       }, { passive: true });
 
-      /* Reveal animations */
       var io = new IntersectionObserver(function(es) {
         es.forEach(function(e) {
           if (e.isIntersecting) {
@@ -1186,35 +1232,12 @@
           }
         });
       }, { threshold: 0.12 });
-      $$('.intro > *, .vm-card, .value, .why-card, .team-card, .stat, .head, .form-card').forEach(function(el, i) {
+      $$('.intro > *, .vm-card, .value, .why-card, .team-card, .stat, .head').forEach(function(el, i) {
         el.classList.add('rv');
         el.style.transitionDelay = (i % 4) * 90 + 'ms';
         io.observe(el);
       });
 
-      /* Count-up stats */
-      $$('.stat b').forEach(function(b) {
-        var target = parseInt(b.getAttribute('data-count'), 10) || 0;
-        var suffix = b.getAttribute('data-suffix') || '';
-        if (target === 0) return;
-        var observed = new IntersectionObserver(function(es) {
-          if (es[0].isIntersecting) {
-            observed.disconnect();
-            var start = performance.now();
-            var duration = 1600;
-            function tick(now) {
-              var p = Math.min((now - start) / duration, 1);
-              var eased = 1 - Math.pow(1 - p, 3);
-              b.textContent = Math.round(target * eased) + suffix;
-              if (p < 1) requestAnimationFrame(tick);
-            }
-            requestAnimationFrame(tick);
-          }
-        }, { threshold: 0.4 });
-        observed.observe(b);
-      });
-
-      /* Mobile menu */
       var menuBtn = document.getElementById('menuBtn');
       var mobileNav = document.getElementById('mobileNav');
       function closeMenu() {
@@ -1239,93 +1262,116 @@
         window.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
         window.addEventListener('resize', function() { if (innerWidth > 860) closeMenu(); });
       }
+    })();
 
-      /* ===== WhatsApp-only contact form ===== */
-      function toast(msg, type) {
-        var t = document.createElement('div');
-        t.className = 'toast' + (type ? ' ' + type : '');
-        t.textContent = msg;
-        document.body.appendChild(t);
-        setTimeout(function() { t.remove(); }, 3200);
+    /* MODAL LOGIC: TWO SEPARATE FORMS */
+    (function() {
+      var WA_NUMBER = '971569465357';
+      
+      var quoteModal = document.getElementById('quoteModal');
+      var consultModal = document.getElementById('consultModal');
+      var closeQuoteBtn = document.getElementById('closeQuoteModal');
+      var closeConsultBtn = document.getElementById('closeConsultModal');
+
+      function closeAllModals() {
+        quoteModal.classList.remove('open');
+        consultModal.classList.remove('open');
+        document.body.style.overflow = '';
       }
 
-      var form = document.getElementById('inquiryForm');
-      if (form) {
-        var fields = {
-          name: document.getElementById('cf-name'),
-          phone: document.getElementById('cf-phone'),
-          email: document.getElementById('cf-email'),
-          service: document.getElementById('cf-service'),
-          location: document.getElementById('cf-location'),
-          budget: document.getElementById('cf-budget'),
-          message: document.getElementById('cf-message')
-        };
-
-        function markBad(el, isBad) { el.classList.toggle('bad', isBad); }
-
-        function validateForm() {
-          var ok = true;
-          ['name', 'phone', 'service', 'location', 'budget'].forEach(function(k) {
-            var el = fields[k];
-            var bad = !el.value.trim();
-            markBad(el, bad);
-            if (bad) ok = false;
-          });
-          if (fields.phone.value.trim()) {
-            var digits = fields.phone.value.replace(/\D/g, '');
-            var phoneBad = digits.length < 10;
-            markBad(fields.phone, phoneBad);
-            if (phoneBad) ok = false;
-          }
-          if (fields.email.value.trim()) {
-            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim());
-            markBad(fields.email, !emailOk);
-            if (!emailOk) ok = false;
-          }
-          return ok;
-        }
-
-        function buildMessage() {
-          var lines = [
-            'New Inquiry — Mashaq Interior',
-            '',
-            'Name: ' + fields.name.value.trim(),
-            'Phone: ' + fields.phone.value.trim()
-          ];
-          if (fields.email.value.trim()) lines.push('Email: ' + fields.email.value.trim());
-          lines.push('Service Required: ' + fields.service.value);
-          lines.push('Project Location: ' + fields.location.value.trim());
-          lines.push('Approximate Budget: ' + fields.budget.value);
-          if (fields.message.value.trim()) {
-            lines.push('');
-            lines.push('Message:');
-            lines.push(fields.message.value.trim());
-          }
-          return lines.join('\n');
-        }
-
-        form.addEventListener('submit', function(e) {
+      document.querySelectorAll('[data-popup]').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
           e.preventDefault();
-          if (!validateForm()) {
-            toast('Please fill in the required fields correctly.', 'error');
-            var bad = form.querySelector('.bad');
-            if (bad) bad.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
+          var type = btn.getAttribute('data-popup');
+          
+          if (type === 'quote') {
+            quoteModal.classList.add('open');
+          } else if (type === 'consult') {
+            consultModal.classList.add('open');
           }
-          var msg = buildMessage();
-          window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
-          toast('Opening WhatsApp…', 'success');
-          if (typeof gtag === 'function') {
-            gtag('event', 'form_submit_whatsapp', { event_category: 'lead', event_label: fields.service.value });
-          }
+          document.body.style.overflow = 'hidden';
         });
+      });
 
-        Object.keys(fields).forEach(function(k) {
-          var el = fields[k];
-          el.addEventListener('input', function() { markBad(el, false); });
-          el.addEventListener('change', function() { markBad(el, false); });
-        });
-      }
+      closeQuoteBtn.addEventListener('click', closeAllModals);
+      closeConsultBtn.addEventListener('click', closeAllModals);
+      
+      quoteModal.addEventListener('click', function(e) {
+        if (e.target === quoteModal) closeAllModals();
+      });
+      consultModal.addEventListener('click', function(e) {
+        if (e.target === consultModal) closeAllModals();
+      });
+      
+      window.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeAllModals();
+      });
+
+      /* --- QUOTE FORM SUBMISSION --- */
+      var quoteForm = document.getElementById('quoteForm');
+      quoteForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var name = document.getElementById('quote-name').value;
+        var phone = document.getElementById('quote-phone').value;
+        var email = document.getElementById('quote-email').value;
+        var property = document.getElementById('quote-property').value;
+        var service = document.getElementById('quote-service').value;
+        var location = document.getElementById('quote-location').value;
+        var budget = document.getElementById('quote-budget').value;
+        var area = document.getElementById('quote-area').value;
+        var message = document.getElementById('quote-message').value;
+
+        if (!name || !phone || !property || !service || !location || !budget) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        var text = 'Hi Mashaq Interior, I would like to request a quote.\n\n' +
+          'Name: ' + name + '\n' +
+          'Phone: ' + phone + '\n' +
+          'Email: ' + email + '\n' +
+          'Property Type: ' + property + '\n' +
+          'Service: ' + service + '\n' +
+          'Location: ' + location + '\n' +
+          'Budget: ' + budget + '\n' +
+          'Area: ' + area + '\n' +
+          'Details: ' + message;
+        
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+        closeAllModals();
+      });
+
+      /* --- CONSULTATION FORM SUBMISSION --- */
+      var consultForm = document.getElementById('consultForm');
+      consultForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        var name = document.getElementById('consult-name').value;
+        var phone = document.getElementById('consult-phone').value;
+        var email = document.getElementById('consult-email').value;
+        var date = document.getElementById('consult-date').value;
+        var time = document.getElementById('consult-time').value;
+        var mode = document.getElementById('consult-mode').value;
+        var message = document.getElementById('consult-message').value;
+
+        if (!name || !phone || !date || !time || !mode) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        var text = 'Hi Mashaq Interior, I would like to book a free consultation.\n\n' +
+          'Name: ' + name + '\n' +
+          'Phone: ' + phone + '\n' +
+          'Email: ' + email + '\n' +
+          'Preferred Date: ' + date + '\n' +
+          'Preferred Time: ' + time + '\n' +
+          'Mode: ' + mode + '\n' +
+          'Discussion: ' + message;
+        
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+        closeAllModals();
+      });
     })();
   </script>
 </body>

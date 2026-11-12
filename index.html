@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- SEO OPTIMIZATION -->
-  <title>Mashaq Interior | Best Interior Designers in Hyderabad</title>
-  <meta name="description" content="Mashaq Interior — Hyderabad's trusted interior design studio. Modular kitchens, wardrobes, residential & commercial interiors, renovation and turnkey projects. Book a free consultation.">
-  <meta name="keywords" content="interior designers Hyderabad, modular kitchen Hyderabad, home interiors Hyderabad, turnkey interiors, interior design studio, Mashaq Interior">
+  <title>Mashaq Interior | Interior Designers in Hyderabad | Home & Office</title>
+  <meta name="description" content="Mashaq Interior is a trusted interior design studio in Hyderabad. We design and build modular kitchens, wardrobes, full home interiors, and office spaces. Book a free consultation or get a quote today.">
+  <meta name="keywords" content="interior designers Hyderabad, modular kitchen Hyderabad, home interiors Hyderabad, turnkey interiors, office interior design, Mashaq Interior">
   <meta name="author" content="Mashaq Interior">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://mashaqinterior.com/">
@@ -15,8 +15,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Mashaq Interior">
-  <meta property="og:title" content="Mashaq Interior | Best Interior Designers in Hyderabad">
-  <meta property="og:description" content="Hyderabad's trusted interior design studio — modular kitchens, wardrobes, residential & commercial interiors, turnkey projects.">
+  <meta property="og:title" content="Mashaq Interior | Interior Designers in Hyderabad">
+  <meta property="og:description" content="Hyderabad's trusted interior design studio. We create beautiful homes and offices – from modular kitchens to full turnkey projects. Book a free consultation or get a quote.">
   <meta property="og:image" content="https://mashaqinterior.com/mashaq-img/og-home.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -24,8 +24,8 @@
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Mashaq Interior | Best Interior Designers in Hyderabad">
-  <meta name="twitter:description" content="Hyderabad's trusted interior design studio — modular kitchens, wardrobes, residential & commercial interiors.">
+  <meta name="twitter:title" content="Mashaq Interior | Interior Designers in Hyderabad">
+  <meta name="twitter:description" content="Hyderabad's trusted interior design studio. We create beautiful homes and offices – from modular kitchens to full turnkey projects.">
   <meta name="twitter:image" content="https://mashaqinterior.com/mashaq-img/og-home.webp">
 
   <meta name="theme-color" content="#0a1a2b">
@@ -64,6 +64,7 @@
   }
   </script>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -146,6 +147,10 @@
     .btn.o:hover { background: rgba(10, 25, 41, 0.05); box-shadow: 0 8px 20px rgba(10, 25, 41, 0.1); }
     .btn.light { background: transparent; border: 1px solid rgba(255,255,255,0.7); color: #fff; }
     .btn.light:hover { background: rgba(255,255,255,0.15); }
+    .btn.consult { background: #1faa59; }
+    .btn.consult:hover { background: #17954c; }
+    .btn.quote { background: var(--gold); }
+    .btn.quote:hover { background: var(--gold-dark); }
 
     /* LOADING ANIMATION */
     .preloader {
@@ -224,6 +229,9 @@
     header nav a.on { color: var(--gold); }
     header .btn { background: var(--gold); }
     header.s .btn { background: var(--navy); }
+    header .btn.consult { background: #1faa59; }
+    header .btn.quote { background: var(--gold); }
+    header .header-buttons { display: flex; gap: 10px; align-items: center; }
 
     /* Mobile menu */
     .menu-btn {
@@ -259,6 +267,8 @@
       letter-spacing: 0.1em; padding: 14px 20px; text-transform: uppercase;
     }
     .mobile-nav .m-cta:hover { background: var(--gold-dark); color: #fff; }
+    .mobile-nav .m-cta.consult { background: #1faa59; }
+    .mobile-nav .m-cta.consult:hover { background: #17954c; }
     body.menu-open { overflow: hidden; }
 
     /* HERO */
@@ -355,7 +365,7 @@
       text-transform: uppercase; color: var(--mut);
     }
 
-    /* SERVICES — with proper SVG icons */
+    /* SERVICES */
     .grid3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -403,9 +413,7 @@
     .card a { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; color: var(--gold); transition: letter-spacing 0.3s; }
     .card a:hover { letter-spacing: 0.2em; }
 
-    /* ============================================================
-       FEATURED PROJECTS — whole card is clickable <a>
-    ============================================================ */
+    /* FEATURED PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr 1fr;
@@ -421,7 +429,7 @@
       display: flex; flex-direction: column; justify-content: flex-end;
       transition: transform 0.4s, box-shadow 0.4s;
       overflow: hidden;
-      text-decoration: none;   /* ← so <a> doesn't get underlined */
+      text-decoration: none;
     }
     .proj img {
       position: absolute; inset: 0;
@@ -585,18 +593,34 @@
     }
     .socials svg { width: 16px; height: 16px; }
 
-    /* WhatsApp */
+    /* Floating WhatsApp */
     .wa {
       position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px));
-      background: #1faa59; color: #fff;
-      border-radius: 30px; padding: 12px 18px;
+      background: #25D366; color: #fff;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       font-size: 13px; z-index: 30;
       animation: pulse 2.4s infinite;
-      display: inline-flex; align-items: center; gap: 8px;
-      box-shadow: 0 6px 20px rgba(31, 170, 89, 0.3);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+      transition: transform 0.3s, background 0.3s;
     }
-    .wa:hover { background: #17954c; }
-    .wa svg { width: 18px; height: 18px; }
+    .wa:hover { background: #128C7E; transform: scale(1.08); }
+    .wa svg { width: 28px; height: 28px; }
+
+    /* Floating Get a Free Consultation */
+    .consult-float {
+      position: fixed; right: 18px; bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+      background: var(--gold); color: #fff;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 30;
+      box-shadow: 0 6px 20px rgba(184, 148, 62, 0.4);
+      transition: transform 0.3s, background 0.3s;
+    }
+    .consult-float:hover { background: var(--gold-dark); transform: scale(1.08); }
+    .consult-float svg { width: 24px; height: 24px; }
 
     #pb { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--gold); z-index: 50; }
     #tt {
@@ -614,7 +638,7 @@
 
     @keyframes up { from { opacity: 0; transform: translateY(30px); } }
     @keyframes mq { to { transform: translateX(-50%); } }
-    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(31, 170, 89, 0.5); } 100% { box-shadow: 0 0 0 16px transparent; } }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 100% { box-shadow: 0 0 0 16px transparent; } }
 
     @media (max-width: 1024px) {
       .why-grid { grid-template-columns: repeat(3, 1fr); }
@@ -626,7 +650,8 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn { display: none; }
+      header .btn:not(.consult) { display: none; }
+      header .header-buttons .btn.quote { display: none; }
 
       .about-intro { grid-template-columns: 1fr; gap: 30px; }
       .about-intro .ph { height: 300px; }
@@ -667,9 +692,7 @@
       .rv { opacity: 1; transform: none; }
     }
 
-    /* ==========================================
-       NEW: MODAL POPUP STYLES
-    ========================================== */
+    /* MODAL STYLES */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(10, 25, 41, 0.8);
       display: none; place-items: center; z-index: 100; padding: 20px;
@@ -735,7 +758,10 @@
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-      <a class="btn" href="#" data-popup="true">Free Consultation</a>
+      <div class="header-buttons">
+        <a class="btn quote" href="#" data-popup="quote">Get a Quote</a>
+        <a class="btn consult" href="#" data-popup="consult">Get a Free Consultation</a>
+      </div>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">Menu</button>
     </div>
   </header>
@@ -747,7 +773,8 @@
     <a href="about.html">About</a>
     <a href="blog.html">Blog</a>
     <a href="contact.html">Contact</a>
-    <a href="#" class="m-cta" data-popup="true">Free Consultation</a>
+    <a href="#" class="m-cta" data-popup="quote">Get a Quote</a>
+    <a href="#" class="m-cta consult" data-popup="consult">Get a Free Consultation</a>
   </div>
 
   <!-- HERO -->
@@ -768,7 +795,7 @@
       <h1>Transforming Spaces<span class="script">Into Timeless Experiences</span></h1>
       <p>Mashaq Interior designs and builds homes, offices and commercial spaces with precision, warmth and honest craftsmanship — from a single modular kitchen to complete turnkey interiors.</p>
       <div class="hero-actions">
-        <a class="btn gold" href="#" data-popup="true">Get a Free Consultation</a>
+        <a class="btn gold" href="#" data-popup="consult">Get a Free Consultation</a>
         <a class="btn light" href="projects.html">Explore Our Projects</a>
       </div>
     </div>
@@ -904,7 +931,7 @@
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS — each card is now a clickable <a href> -->
+  <!-- FEATURED PROJECTS -->
   <section id="projects" style="padding-top:0;">
     <div class="wrap">
       <div class="head">
@@ -1020,7 +1047,7 @@
       <div class="eyebrow" style="justify-content:center;">Let's Create Something Extraordinary</div>
       <h2>Let's Design <span class="script">Your Dream Space</span></h2>
       <p>Tell us about your project and we'll get back to you within one business day with the next steps.</p>
-      <a class="btn gold" href="#" data-popup="true">Contact Us</a>
+      <a class="btn gold" href="#" data-popup="consult">Get a Free Consultation</a>
       <a class="btn light" href="tel:+919742089547">Call +91 97420 89547</a>
     </div>
   </section>
@@ -1082,41 +1109,62 @@
     </div>
   </footer>
 
-  <a class="wa" href="#" aria-label="Chat with Mashaq Interior on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/></svg>
-    Chat on WhatsApp
+  <!-- Floating Buttons -->
+  <a class="wa" href="https://wa.me/971569465357?text=Hi%20Mashaq%20Interior%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Mashaq Interior on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15zM12.1 21.7a9.4 9.4 0 01-4.8-1.3l-.3-.2-4.2 1.1 1.1-4.1-.2-.4a9.3 9.3 0 01-1.4-5A9.4 9.4 0 0121.5 12a9.4 9.4 0 01-9.4 9.7z"/>
+    </svg>
+  </a>
+
+  <a class="consult-float" href="#" data-popup="consult" aria-label="Get a free consultation">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
   </a>
 
   <!-- ========================================== -->
-  <!-- NEW: MODAL CONTACT FORM                    -->
+  <!-- MODAL 1: GET A QUOTE FORM                  -->
   <!-- ========================================== -->
-  <div class="modal-overlay" id="enquiryModal">
+  <div class="modal-overlay" id="quoteModal">
     <div class="modal-content">
-      <button class="close-modal" id="closeModalBtn">&times;</button>
+      <button class="close-modal" id="closeQuoteModal">&times;</button>
       
-      <div class="eyebrow">Get in Touch</div>
-      <h2>Tell Us About <span class="script">Your Project</span></h2>
-      <p>Fill in the details below and we'll reply within one business day.</p>
+      <div class="eyebrow">Request a Quote</div>
+      <h2>Get a <span class="script">Quote</span></h2>
+      <p>Tell us what you need and we'll send you a detailed estimate within 2 business days.</p>
 
-      <form class="form-grid-modal" id="enquiryForm">
+      <form class="form-grid-modal" id="quoteForm">
         <div class="form-row-modal">
           <label>Full Name *</label>
-          <input type="text" id="modal-name" placeholder="Your Name" required>
+          <input type="text" id="quote-name" placeholder="Your Name" required>
         </div>
 
         <div class="form-row-modal">
           <label>Phone Number *</label>
-          <input type="tel" id="modal-phone" placeholder="Phone Number" required>
+          <input type="tel" id="quote-phone" placeholder="Phone Number" required>
         </div>
 
         <div class="form-row-modal">
           <label>Email Address</label>
-          <input type="email" id="modal-email" placeholder="Email Address">
+          <input type="email" id="quote-email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row-modal">
+          <label>Property Type *</label>
+          <select id="quote-property" required>
+            <option value="">Select property type</option>
+            <option>Apartment / Flat</option>
+            <option>Independent House / Villa</option>
+            <option>Office Space</option>
+            <option>Retail Shop</option>
+            <option>Restaurant / Hotel</option>
+            <option>Other</option>
+          </select>
         </div>
 
         <div class="form-row-modal">
           <label>Service Required *</label>
-          <select id="modal-service" required>
+          <select id="quote-service" required>
             <option value="">Select a service</option>
             <option>Full Home Interiors</option>
             <option>Modular Kitchen</option>
@@ -1142,12 +1190,12 @@
 
         <div class="form-row-modal">
           <label>Project Location *</label>
-          <input type="text" id="modal-location" placeholder="Project Location" required>
+          <input type="text" id="quote-location" placeholder="Area / Locality" required>
         </div>
 
         <div class="form-row-modal">
           <label>Approximate Budget *</label>
-          <select id="modal-budget" required>
+          <select id="quote-budget" required>
             <option value="">Select a range</option>
             <option>Under ₹5 Lakhs</option>
             <option>₹5 – 10 Lakhs</option>
@@ -1159,17 +1207,97 @@
           </select>
         </div>
 
+        <div class="form-row-modal">
+          <label>Area (sq. ft.)</label>
+          <input type="text" id="quote-area" placeholder="e.g. 1200 sq. ft.">
+        </div>
+
         <div class="form-row-modal full">
-          <label>Message</label>
-          <textarea id="modal-message" rows="3" placeholder="Tell us about your project..."></textarea>
+          <label>Additional Details</label>
+          <textarea id="quote-message" rows="3" placeholder="Any specific requirements, preferred materials, timeline, etc."></textarea>
         </div>
 
         <div class="form-actions-modal">
-          <button type="submit" class="btn green" id="modal-wa-btn">
+          <button type="submit" class="btn quote" style="background:#b8943e;">
             <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;" aria-hidden="true">
               <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/>
             </svg>
-            Send via WhatsApp
+            Send Quote Request via WhatsApp
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- MODAL 2: GET A FREE CONSULTATION FORM      -->
+  <!-- ========================================== -->
+  <div class="modal-overlay" id="consultModal">
+    <div class="modal-content">
+      <button class="close-modal" id="closeConsultModal">&times;</button>
+      
+      <div class="eyebrow">Book a Call</div>
+      <h2>Get a Free <span class="script">Consultation</span></h2>
+      <p>Book a free 30-minute call with our design team. No obligation, just honest advice.</p>
+
+      <form class="form-grid-modal" id="consultForm">
+        <div class="form-row-modal">
+          <label>Full Name *</label>
+          <input type="text" id="consult-name" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Phone Number *</label>
+          <input type="tel" id="consult-phone" placeholder="Phone Number" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Email Address</label>
+          <input type="email" id="consult-email" placeholder="Email Address">
+        </div>
+
+        <div class="form-row-modal">
+          <label>Preferred Date *</label>
+          <input type="date" id="consult-date" required>
+        </div>
+
+        <div class="form-row-modal">
+          <label>Preferred Time *</label>
+          <select id="consult-time" required>
+            <option value="">Select a time slot</option>
+            <option>10:00 AM – 11:00 AM</option>
+            <option>11:00 AM – 12:00 PM</option>
+            <option>12:00 PM – 01:00 PM</option>
+            <option>02:00 PM – 03:00 PM</option>
+            <option>03:00 PM – 04:00 PM</option>
+            <option>04:00 PM – 05:00 PM</option>
+            <option>05:00 PM – 06:00 PM</option>
+            <option>06:00 PM – 07:00 PM</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal">
+          <label>How Should We Connect? *</label>
+          <select id="consult-mode" required>
+            <option value="">Select mode</option>
+            <option>Phone Call</option>
+            <option>WhatsApp Video</option>
+            <option>Google Meet / Zoom</option>
+            <option>In-Person at Studio</option>
+          </select>
+        </div>
+
+        <div class="form-row-modal full">
+          <label>What Would You Like to Discuss?</label>
+          <textarea id="consult-message" rows="3" placeholder="Tell us a little about your project so we can prepare for the call..."></textarea>
+        </div>
+
+        <div class="form-actions-modal">
+          <button type="submit" class="btn consult" style="background:#1faa59;">
+            <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;" aria-hidden="true">
+              <path d="M20.5 3.5A11.4 11.4 0 0012.1 0 11.3 11.3 0 002.6 17.1L.6 24l7.1-2a11.3 11.3 0 0013.5-3.5 11.3 11.3 0 00-.7-15z"/>
+            </svg>
+            Book Consultation via WhatsApp
           </button>
         </div>
       </form>
@@ -1203,7 +1331,9 @@
         a.classList.toggle('on', a.getAttribute('href') === (h === 'home' ? 'index.html' : h + '.html'));
       });
       document.querySelectorAll('a[href="#"]').forEach(function(a) {
-        a.addEventListener('click', function(e) { e.preventDefault(); });
+        if (!a.hasAttribute('data-popup')) {
+          a.addEventListener('click', function(e) { e.preventDefault(); });
+        }
       });
     })();
 
@@ -1213,9 +1343,6 @@
 
       var wa = $('.wa');
       if (wa) {
-        wa.href = 'https://wa.me/971569465357?text=' + encodeURIComponent('Hi Mashaq Interior, I would like to know more about your services.');
-        wa.target = '_blank';
-        wa.rel = 'noopener';
         wa.addEventListener('click', function() {
           if (typeof gtag === 'function') {
             gtag('event', 'whatsapp_click', { event_category: 'engagement', event_label: 'floating_whatsapp' });
@@ -1284,64 +1411,118 @@
       }
     })();
 
-    /* NEW: MODAL POPUP FORM LOGIC */
+    /* ======================================================
+       MODAL LOGIC: TWO SEPARATE FORMS
+    ====================================================== */
     (function() {
       var WA_NUMBER = '971569465357';
-      var modal = document.getElementById('enquiryModal');
-      var closeBtn = document.getElementById('closeModalBtn');
-      var serviceDropdown = document.getElementById('modal-service');
+      
+      var quoteModal = document.getElementById('quoteModal');
+      var consultModal = document.getElementById('consultModal');
+      var closeQuoteBtn = document.getElementById('closeQuoteModal');
+      var closeConsultBtn = document.getElementById('closeConsultModal');
 
-      // 1. Open modal when any button with data-popup is clicked
+      // Function to close all modals
+      function closeAllModals() {
+        quoteModal.classList.remove('open');
+        consultModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      // Open modal based on data-popup value
       document.querySelectorAll('[data-popup]').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.preventDefault();
+          var type = btn.getAttribute('data-popup');
           
-          // Show the modal
-          modal.classList.add('open');
-          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          if (type === 'quote') {
+            quoteModal.classList.add('open');
+          } else if (type === 'consult') {
+            consultModal.classList.add('open');
+          }
+          document.body.style.overflow = 'hidden';
         });
       });
 
-      // 2. Close modal
-      function closeModal() {
-        modal.classList.remove('open');
-        document.body.style.overflow = '';
-      }
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) closeModal(); // Close if clicking outside the white box
+      // Close handlers
+      closeQuoteBtn.addEventListener('click', closeAllModals);
+      closeConsultBtn.addEventListener('click', closeAllModals);
+      
+      quoteModal.addEventListener('click', function(e) {
+        if (e.target === quoteModal) closeAllModals();
       });
+      consultModal.addEventListener('click', function(e) {
+        if (e.target === consultModal) closeAllModals();
+      });
+      
       window.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') closeAllModals();
       });
 
-      // 3. Handle WhatsApp Submission ONLY
-      var form = document.getElementById('enquiryForm');
-      
-      form.addEventListener('submit', function(e) {
+      // --- QUOTE FORM SUBMISSION ---
+      var quoteForm = document.getElementById('quoteForm');
+      quoteForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        var name = document.getElementById('modal-name').value;
-        var phone = document.getElementById('modal-phone').value;
-        var email = document.getElementById('modal-email').value;
-        var service = serviceDropdown.value;
-        var location = document.getElementById('modal-location').value;
-        var budget = document.getElementById('modal-budget').value;
-        var message = document.getElementById('modal-message').value;
+        var name = document.getElementById('quote-name').value;
+        var phone = document.getElementById('quote-phone').value;
+        var email = document.getElementById('quote-email').value;
+        var property = document.getElementById('quote-property').value;
+        var service = document.getElementById('quote-service').value;
+        var location = document.getElementById('quote-location').value;
+        var budget = document.getElementById('quote-budget').value;
+        var area = document.getElementById('quote-area').value;
+        var message = document.getElementById('quote-message').value;
 
-        if (!name || !phone || !service || !location || !budget) {
+        if (!name || !phone || !property || !service || !location || !budget) {
           alert('Please fill in all required fields.');
           return;
         }
 
-        // Format the message for WhatsApp
-        var text = 'Hi Mashaq Interior,\n\nName: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\nLocation: ' + location + '\nBudget: ' + budget + '\n\nMessage:\n' + message;
+        var text = 'Hi Mashaq Interior, I would like to request a quote.\n\n' +
+          'Name: ' + name + '\n' +
+          'Phone: ' + phone + '\n' +
+          'Email: ' + email + '\n' +
+          'Property Type: ' + property + '\n' +
+          'Service: ' + service + '\n' +
+          'Location: ' + location + '\n' +
+          'Budget: ' + budget + '\n' +
+          'Area: ' + area + '\n' +
+          'Details: ' + message;
         
-        // Open WhatsApp
         window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+        closeAllModals();
+      });
+
+      // --- CONSULTATION FORM SUBMISSION ---
+      var consultForm = document.getElementById('consultForm');
+      consultForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Close modal after sending
-        closeModal();
+        var name = document.getElementById('consult-name').value;
+        var phone = document.getElementById('consult-phone').value;
+        var email = document.getElementById('consult-email').value;
+        var date = document.getElementById('consult-date').value;
+        var time = document.getElementById('consult-time').value;
+        var mode = document.getElementById('consult-mode').value;
+        var message = document.getElementById('consult-message').value;
+
+        if (!name || !phone || !date || !time || !mode) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        var text = 'Hi Mashaq Interior, I would like to book a free consultation.\n\n' +
+          'Name: ' + name + '\n' +
+          'Phone: ' + phone + '\n' +
+          'Email: ' + email + '\n' +
+          'Preferred Date: ' + date + '\n' +
+          'Preferred Time: ' + time + '\n' +
+          'Mode: ' + mode + '\n' +
+          'Discussion: ' + message;
+        
+        window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(text), '_blank');
+        closeAllModals();
       });
     })();
   </script>
