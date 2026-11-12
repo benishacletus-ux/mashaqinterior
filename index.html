@@ -650,8 +650,10 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn:not(.consult) { display: none; }
-      header .header-buttons .btn.quote { display: none; }
+      
+      /* Header Button Logic for Mobile */
+      header .btn.consult { display: none; }
+      header .header-buttons .btn.quote { display: inline-block; }
 
       .about-intro { grid-template-columns: 1fr; gap: 30px; }
       .about-intro .ph { height: 300px; }
@@ -659,11 +661,22 @@
       .about-stats b { font-size: 24px; }
 
       .grid3 { grid-template-columns: 1fr; }
+      
+      /* PROJECTS GRID FIX FOR MOBILE */
       .projects-grid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 220px 220px auto;
+        grid-template-rows: auto auto auto; /* Changed from fixed px to auto */
+        gap: 16px; /* Ensure gap is applied */
       }
-      .proj:first-child { grid-row: auto; grid-column: 1 / -1; height: 240px; }
+      .proj {
+        height: 260px; /* Add a fixed height to the cards on mobile so they display correctly */
+        grid-column: span 1; 
+      }
+      .proj:first-child { 
+        grid-row: auto; 
+        grid-column: 1 / -1; 
+        height: 300px; /* Make the first card slightly taller */
+      }
       .rev { grid-template-columns: 1fr; }
 
       .why-grid { grid-template-columns: 1fr 1fr; }
@@ -671,6 +684,8 @@
       .why-item:nth-child(2n) { border-right: 0 !important; }
 
       footer .cols { grid-template-columns: 1fr; }
+      footer .copy { text-align: center; }
+      
       header .wrap { flex-wrap: nowrap; height: 64px; padding-top: 0; }
       .hero { padding-top: 100px; }
       .hero h1 { font-size: clamp(32px, 8vw, 54px); }
@@ -680,8 +695,20 @@
       .bg { display: none; }
     }
     @media (max-width: 520px) {
-      .projects-grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 220px); }
-      .proj:first-child { grid-column: auto; }
+      /* PROJECTS GRID FIX FOR SMALL MOBILE */
+      .projects-grid { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
+        gap: 16px; 
+      }
+      .proj {
+        height: 240px; /* Fixed height for mobile */
+        grid-column: 1 / -1;
+      }
+      .proj:first-child { 
+        grid-column: 1 / -1; 
+        height: 240px;
+      }
       .why-grid { grid-template-columns: 1fr; }
       .why-item { border-right: 0 !important; }
       .cta-banner .btn + .btn { margin: 10px 0 0; display: inline-block; }

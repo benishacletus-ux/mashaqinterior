@@ -526,8 +526,11 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn:not(.consult) { display: none; }
-      header .header-buttons .btn.quote { display: none; }
+      
+      /* Header Button Logic for Mobile */
+      header .btn.consult { display: none; }
+      header .header-buttons .btn.quote { display: inline-block; }
+
       .gallery { grid-template-columns: 1fr; gap: 20px; }
       .filters { gap: 8px; }
       .filters button { padding: 8px 14px; font-size: 11px; }
@@ -537,6 +540,8 @@
       .proj-body { padding: 20px 20px 22px; }
       .proj-body h3 { font-size: 20px; }
       footer .cols { grid-template-columns: 1fr; }
+      footer .copy { text-align: center; } /* Centered footer copy on mobile */
+      
       header .wrap { flex-wrap: nowrap; height: 64px; padding-top: 0; }
       .sub { padding-top: 190px; }
       .sub h1 { font-size: clamp(32px, 7vw, 52px); }

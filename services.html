@@ -487,15 +487,21 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn:not(.consult) { display: none; }
-      header .header-buttons .btn.quote { display: none; }
+      
+      /* Header Button Logic for Mobile */
+      header .btn.consult { display: none; }
+      header .header-buttons .btn.quote { display: inline-block; }
+
       .services-grid.cols-3,
       .services-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
       .process-grid { grid-template-columns: repeat(2, 1fr); }
       .step:nth-child(2n) { border-right: 0; }
       .step:nth-child(3n) { border-right: 1px solid var(--card-border); }
       .step:nth-child(n+3) { border-top: 1px solid var(--card-border); }
+      
       footer .cols { grid-template-columns: 1fr; }
+      footer .copy { text-align: center; } /* Centered footer copy on mobile */
+      
       header .wrap { flex-wrap: nowrap; height: 64px; padding-top: 0; }
       .sub { padding-top: 190px; }
       .sub h1 { font-size: clamp(32px, 7vw, 52px); }

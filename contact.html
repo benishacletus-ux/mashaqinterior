@@ -743,8 +743,10 @@
       nav { display: none; }
       .menu-btn { display: inline-block; }
       .mobile-nav { display: block; }
-      header .btn:not(.consult) { display: none; }
-      header .header-buttons .btn.quote { display: none; }
+      
+      /* Header Button Logic for Mobile */
+      header .btn.consult { display: none; }
+      header .header-buttons .btn.quote { display: inline-block; }
 
       .info-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
       .form-grid { grid-template-columns: 1fr; }
@@ -752,6 +754,8 @@
       .form-actions .btn { width: 100%; text-align: center; }
 
       footer .cols { grid-template-columns: 1fr; }
+      footer .copy { text-align: center; } /* Centered footer copy on mobile */
+      
       header .wrap { flex-wrap: nowrap; height: 64px; padding-top: 0; }
       .sub { padding-top: 190px; }
       .sub h1 { font-size: clamp(30px, 7vw, 52px); }
