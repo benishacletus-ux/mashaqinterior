@@ -1,0 +1,20 @@
+MASHAQ INTERIOR — LOCAL SEO UPDATE
+
+Business location supplied by client:
+House No. 68, OU Colony, Manikonda, Hyderabad, Telangana, India
+
+Changes made:
+- Added the supplied street address to existing LocalBusiness PostalAddress JSON-LD on pages where that schema already existed.
+- Updated the existing footer location text where present.
+- Preserved existing page design, CSS/JavaScript behavior, URLs, canonical tags, titles, descriptions, and sitemap structure.
+
+Before publishing:
+1. Confirm the address wording exactly matches the Google Business Profile.
+2. Confirm whether a postal PIN code should be added; it was not supplied, so none was invented.
+3. Validate structured data with Google's Rich Results Test and Schema.org validator.
+4. Check the deployed canonical URLs and sitemap in Google Search Console.
+5. Make sure the Google Business Profile address, phone, hours, website and name match the website.
+
+Important:
+- Google chooses rankings and sitelinks algorithmically; no code can guarantee a top position or exact sitelinks.
+- Keep the address public on the site only if the business intends customers to see it.
